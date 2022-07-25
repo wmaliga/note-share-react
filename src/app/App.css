@@ -7,6 +7,10 @@
   height: 20px;
 }
 
+.align-center {
+  text-align: center;
+}
+
 .content-subhead {
   text-transform: uppercase;
   color: #aaa;
