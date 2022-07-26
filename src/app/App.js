@@ -1,4 +1,5 @@
 import React from "react";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 
 import 'purecss/build/pure-min.css';
 import 'purecss/build/grids-responsive-min.css';
@@ -6,6 +7,9 @@ import 'purecss/build/grids-responsive-min.css';
 import './App.css';
 
 import NoteList from './note-list/NoteList';
+import NoteDetails from "./note-details/NoteDetails";
+import NoteShare from "./note-share/NoteShare";
+import NoteLink from "./note-link/NoteLink";
 
 function App() {
   return (
@@ -26,7 +30,14 @@ function App() {
         </div>
       </div>
       <div className="content pure-u-1 pure-u-md-1-2">
-        <NoteList/>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<NoteList/>}/>
+            <Route path="/note/:id" element={<NoteDetails/>}/>
+            <Route path="/share" element={<NoteShare/>}/>
+            <Route path="/share/link/:id" element={<NoteLink/>}/>
+          </Routes>
+        </BrowserRouter>
       </div>
     </div>
   );
