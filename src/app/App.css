@@ -66,6 +66,15 @@ label {
   background: red;
 }
 
+.error-container {
+  border: 1px solid #eee;
+  background-color: #af2424;
+  border-radius: 10px;
+  color: white;
+  margin-top: 20px;
+  padding: 20px 20px;
+}
+
 #loading {
   display: inline-block;
   width: 50px;

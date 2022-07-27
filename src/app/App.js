@@ -1,5 +1,5 @@
-import React from "react";
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import React from 'react';
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
 
 import 'purecss/build/pure-min.css';
 import 'purecss/build/grids-responsive-min.css';
@@ -7,9 +7,9 @@ import 'purecss/build/grids-responsive-min.css';
 import './App.css';
 
 import NoteList from './note-list/NoteList';
-import NoteDetails from "./note-details/NoteDetails";
-import NoteShare from "./note-share/NoteShare";
-import NoteLink from "./note-link/NoteLink";
+import NoteDetails from './note-details/NoteDetails';
+import NoteShare from './note-share/NoteShare';
+import NoteLink from './note-link/NoteLink';
 
 function App() {
   return (
