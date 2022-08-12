@@ -3,6 +3,8 @@ import {useParams} from 'react-router-dom';
 
 import './NoteDetails.css';
 
+const API = process.env.REACT_APP_API_URL;
+
 function NoteDetails() {
   const [loading, setLoading] = useState(true);
   const [noteType, setNoteType] = useState(null);
@@ -29,7 +31,7 @@ function NoteDetails() {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:8080/api/v1/notes/${id}/type`, {method: 'GET'})
+    fetch(`${API}/notes/${id}/type`, {method: 'GET'})
       .then(validateResponse)
       .then(setNoteType)
       .catch(error => {
@@ -42,7 +44,7 @@ function NoteDetails() {
     if (!noteType) return;
     if (noteType === 'PRIVATE' && !password) return;
 
-    fetch(`http://localhost:8080/api/v1/notes/${id}`, {
+    fetch(`${API}/notes/${id}`, {
       method: 'GET',
       headers: {
         'Authorization': password

@@ -4,6 +4,7 @@ import {Formik} from 'formik';
 
 import './NoteShare.css';
 
+const API = process.env.REACT_APP_API_URL;
 const datePattern = /^\d{4}-\d{2}-\d{2}$/;
 
 const datePlusDays = days => {
@@ -46,7 +47,7 @@ function NoteShare() {
         onSubmit={(values) => {
           console.log(values);
 
-          fetch('http://localhost:8080/api/v1/notes', {
+          fetch(`${API}/notes`, {
             method: 'POST',
             headers: {
               'Accept': 'application/json',
